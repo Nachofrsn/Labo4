@@ -4,8 +4,6 @@
     {
         public string Marca { get; set; } = null!;
         public string Modelo { get; set; } = null!;
-        public string Color { get; set; } = null!;
-        public string Motor { get; set; } = null!;
         public int CantPuertas { get; set; } 
         public string Transmision { get; set; } = null!;
         public string TipoCombustible { get; set; } = null!;

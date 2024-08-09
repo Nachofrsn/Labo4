@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Cards</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <div class="container">
+      <div class="card">
+        <p class="title">Rick Sanchez</p>
+      </div>
+      <div class="card">
+        <p class="title">Morty Smith</p>
+      </div>
+      <div class="card">
+        <p class="title">Summer Smith</p>
+      </div>
+      <div class="card">
+        <p class="title">Beth Smith</p>
+      </div>
+      <div class="card">
+        <p class="title">Joe Doe</p>
+      </div>
+      <div class="card">
+        <p class="title">Jane Doe</p>
+      </div>
+      <div class="card">
+        <p class="title">John Doe</p>
+      </div>
+    </div> -->
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script type="text/babel">
+      const $root = document.querySelector("#root");
+      const root = ReactDOM.createRoot($root);
+
+      function Conteiner({ children }) {
+        return <div class="container">{children}</div>;
+      }
+
+      function Card({ text }) {
+        return (
+          <div className="card">
+            <p className="title">{text}</p>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <Conteiner>
+            <Card text="Rick Sanchez" />;
+            <Card text="Morty Smith" />;
+            <Card text="Summer Smith" />;
+            <Card text="Beth Smith" />;
+            <Card text="Joe Doe" />;
+            <Card text="Jane Doe" />;
+            <Card text="John Doe" />;
+          </Conteiner>
+        );
+      }
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>

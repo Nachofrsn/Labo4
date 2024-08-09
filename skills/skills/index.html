@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <main class="container">
+      <section class="skill-box">
+        <span class="title">HTML</span>
+
+        <div class="skill-bar">
+          <span class="skill-per">
+            <span class="tooltip">90%</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="skill-box">
+        <span class="title">CSS</span>
+
+        <div class="skill-bar">
+          <span class="skill-per">
+            <span class="tooltip">60%</span>
+          </span>
+        </div>
+      </section>
+      <section class="skill-box">
+        <span class="title">JS</span>
+
+        <div class="skill-bar">
+          <span class="skill-per">
+            <span class="tooltip">70%</span>
+          </span>
+        </div>
+      </section>
+    </main> -->
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script type="text/babel">
+      const $root = document.querySelector("#root");
+      const root = ReactDOM.createRoot($root);
+
+      function Skill({ text, percent, delay = 0.1 }) {
+        return (
+          <section className="skill-box">
+            <span className="title">{text}</span>
+
+            <div className="skill-bar">
+              <span
+                className="skill-per"
+                style={{ width: `${percent}%`, animationDelay: `${delay}s` }}
+              >
+                <span className="tooltip">{percent}%</span>
+              </span>
+            </div>
+          </section>
+        );
+      }
+
+      function Container({ centerOnScreen = false, children }) {
+        if (centerOnScreen) {
+          return (
+            <div className="center">
+              <main className="container">{children}</main>
+            </div>
+          );
+        }
+        return <main className="container">{children}</main>;
+      }
+
+      function App() {
+        return (
+          <Container centerOnScreen>
+            <Skill text="HTML" percent={90} delay={5} />
+            <Skill text="CSS" percent={60} />
+            <Skill text="JS" percent={70} />
+            <Skill text="REACT" percent={10} />
+          </Container>
+        );
+      }
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>

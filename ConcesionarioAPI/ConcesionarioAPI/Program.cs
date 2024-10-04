@@ -1,6 +1,10 @@
 using concesionarioAPI.Config;
+using concesionarioAPI.Repositories;
 using concesionarioAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,9 @@ builder.Services.AddScoped<CombustibleServices>();
 builder.Services.AddScoped<UserServices>();
 builder.Services.AddScoped<IEncoderServices, EncoderServices>();
 
+// Repositorios
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(Mapping));
 
@@ -24,6 +31,23 @@ builder.Services.AddAutoMapper(typeof(Mapping));
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
+});
+
+//secret key
+string secretKey = builder.Configuration.GetSection("jwtSettings").GetSection("secretKey").ToString();
+
+// jwt
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+    };
 });
 
 var app = builder.Build();
@@ -36,6 +60,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

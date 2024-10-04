@@ -1,6 +1,6 @@
 ﻿using concesionarioAPI.Models.Auto;
 using concesionarioAPI.Models.Combustible;
-using concesionarioAPI.Models.User;
+using concesionarioAPI.Models.Usuario;
 using Microsoft.EntityFrameworkCore;
 
 namespace concesionarioAPI.Config
@@ -15,9 +15,7 @@ namespace concesionarioAPI.Config
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasData(
-                    new User {Id=1, Name = "Juan Perez", Email = "jp@mail.com", Username = "jperez", Password = "juanpi"}
-                );
+            modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
             modelBuilder.Entity<Auto>().HasData(
                 new Auto
                 {

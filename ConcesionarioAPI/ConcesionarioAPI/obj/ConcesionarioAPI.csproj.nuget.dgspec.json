@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {}
+    "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {
+    "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+        "projectUniqueName": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
         "projectName": "concesionarioAPI",
-        "projectPath": "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
-        "packagesPath": "C:\\Users\\icordero\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
+        "projectPath": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+        "packagesPath": "C:\\Users\\jgaeto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\icordero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jgaeto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,13 +52,13 @@
               "target": "Package",
               "version": "[5.3.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.20, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[6.0.33, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -66,13 +66,13 @@
               "target": "Package",
               "version": "[7.0.20, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.17, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.7.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.1.0, )"
             }
           },
           "imports": [

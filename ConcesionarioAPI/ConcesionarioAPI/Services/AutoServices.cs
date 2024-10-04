@@ -79,6 +79,5 @@ namespace concesionarioAPI.Services
             _db.Autos.Remove(auto);
             _db.SaveChanges();
         }
-
     }
 }

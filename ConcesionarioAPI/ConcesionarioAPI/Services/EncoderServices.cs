@@ -5,7 +5,6 @@
         string Encode(string str);
         bool Verify(string str, string strHash);
     }
-
     public class EncoderServices : IEncoderServices
     {
         public string Encode(string str)

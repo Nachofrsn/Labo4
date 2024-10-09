@@ -1,32 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {}
+    "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {
+    "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+        "projectUniqueName": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
         "projectName": "concesionarioAPI",
-        "projectPath": "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
-        "packagesPath": "C:\\Users\\icordero\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\icordero\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
+        "projectPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+        "packagesPath": "C:\\Users\\icordero.FRSN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\icordero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\icordero.FRSN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -34,11 +38,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -52,13 +61,13 @@
               "target": "Package",
               "version": "[5.3.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.35, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.20, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[6.0.33, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -66,13 +75,13 @@
               "target": "Package",
               "version": "[7.0.20, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.17, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.7.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.1.2, )"
             }
           },
           "imports": [
@@ -94,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

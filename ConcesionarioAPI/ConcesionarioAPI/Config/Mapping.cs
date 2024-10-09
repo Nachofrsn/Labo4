@@ -3,8 +3,8 @@ using concesionarioAPI.Models.Auto;
 using concesionarioAPI.Models.Auto.Dto;
 using concesionarioAPI.Models.Combustible;
 using concesionarioAPI.Models.Combustible.Dto;
-using concesionarioAPI.Models.User;
 using concesionarioAPI.Models.User.Dto;
+using concesionarioAPI.Models.Usuario;
 
 namespace concesionarioAPI.Config
 {
@@ -41,7 +41,8 @@ namespace concesionarioAPI.Config
                 {
                     opts.Condition((src, dest, srcMember) => srcMember != null);
                 });
-            //USUARIOS
+
+            // Usuarios
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<User, UsersDTO>().ReverseMap();
             CreateMap<User, CreateUserDTO>().ReverseMap();

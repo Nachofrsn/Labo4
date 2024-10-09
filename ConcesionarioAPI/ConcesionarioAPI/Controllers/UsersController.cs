@@ -1,33 +1,32 @@
-﻿using concesionarioAPI.Models.Auto.Dto;
-using concesionarioAPI.Models.Auto;
-using concesionarioAPI.Services;
+﻿using concesionarioAPI.Services;
 using concesionarioAPI.Utils.Exceptions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using concesionarioAPI.Models.User.Dto;
-using concesionarioAPI.Models.User;
+using concesionarioAPI.Models.Usuario;
+using Microsoft.AspNetCore.Authorization;
 
 namespace concesionarioAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
+    [Authorize]
     [ApiController]
     public class UsersController : ControllerBase
     {
         private readonly UserServices _userServices;
-
         public UsersController(UserServices userServices)
         {
             _userServices = userServices;
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<List<UsersDTO>> Get()
+        public async Task<ActionResult<List<UsersDTO>>> Get()
         {
             try
             {
-                var users = _userServices.GetAll();
+                var users = await _userServices.GetAll();
                 return Ok(users);
             }
             catch (Exception ex)
@@ -37,14 +36,15 @@ namespace concesionarioAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<UserDTO> Get(int id)
+        public async Task<ActionResult<UserDTO>> Get(int id)
         {
             try
             {
-                var user = _userServices.GetOneById(id);
+                var user = await _userServices.GetOneById(id);
                 return Ok(user);
             }
             catch (CustomHttpException ex)
@@ -62,7 +62,7 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<User> Post([FromBody] CreateUserDTO createUserDTO)
+        public async Task<ActionResult<User>> Post([FromBody] CreateUserDTO createUserDto)
         {
             try
             {
@@ -70,9 +70,9 @@ namespace concesionarioAPI.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-                var user = _userServices.CreateOne(createUserDTO);
-               
+                var user = await _userServices.CreateOne(createUserDto);
                 return Created(nameof(Post), user);
+
             }
             catch (CustomHttpException ex)
             {
@@ -89,7 +89,7 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<User> Put(int id, [FromBody] UpdateUserDTO updateUserDTO)
+        public async Task<ActionResult<User>> Put(int id, [FromBody] UpdateUserDTO updateUserDto)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace concesionarioAPI.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-                var user = _userServices.UpdateOneById(id, updateUserDTO);
+                var user = await _userServices.UpdateOneById(id, updateUserDto);
                 return Ok(user);
 
             }
@@ -116,11 +116,11 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             try
             {
-                _userServices.DeleteOneById(id);
+                await _userServices.DeleteOneById(id);
                 return Ok(new CustomMessage($"El Usuario con el Id = {id} fue eliminado!"));
                 // tambien se puede devolver un 'no content 204'
                 // return NoContent();

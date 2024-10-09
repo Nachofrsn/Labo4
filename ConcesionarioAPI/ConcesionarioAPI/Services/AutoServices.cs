@@ -2,6 +2,7 @@
 using concesionarioAPI.Config;
 using concesionarioAPI.Models.Auto;
 using concesionarioAPI.Models.Auto.Dto;
+using concesionarioAPI.Repositories;
 using concesionarioAPI.Utils.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -11,20 +12,21 @@ namespace concesionarioAPI.Services
     public class AutoServices
     {
         private readonly IMapper _mapper;
-        private readonly ApplicationDbContext _db;
+        private readonly IAutoRepository _autoRepo;
         private readonly CombustibleServices _combustibleServices;
 
-        public AutoServices(IMapper mapper, ApplicationDbContext db, CombustibleServices combustibleServices)
+        public AutoServices(IMapper mapper, IAutoRepository autoRepo, CombustibleServices combustibleServices)
         {
             _mapper = mapper;
-            _db = db;
+            _autoRepo = autoRepo;
             _combustibleServices = combustibleServices;
         }
 
-        private Auto GetOneByIdOrException(int id)
+        private async Task<Auto> GetOneByIdOrException(int id)
         {
             // Icluimos la entidad Combustible para que la traiga con la consulta.
-            var auto = _db.Autos.Include(a => a.Combustible).FirstOrDefault(a => a.Id == id);
+            // ?
+            var auto = await _autoRepo.GetOne(a => a.Id == id);
             if (auto == null)
             {
                 throw new CustomHttpException($"No se encontro el auto con Id = {id}", HttpStatusCode.NotFound);
@@ -32,53 +34,49 @@ namespace concesionarioAPI.Services
             return auto;
         }
 
-        public List<AutosDTO> GetAll()
+        public async Task<List<AutosDTO>> GetAll()
         {
-            var autos = _db.Autos.Select(a => a).ToList();
+            var autos = await _autoRepo.GetAll();
             return _mapper.Map<List<AutosDTO>>(autos);
         }
 
-        public AutoDTO GetOneById(int id)
+        public async Task<AutoDTO> GetOneById(int id)
         {
-            var auto = GetOneByIdOrException(id);
+            var auto = await GetOneByIdOrException(id);
             //var combustible = _combustibleServices.GetOneById(auto.CombustibleId);
             //auto.Combustible = combustible;
             return _mapper.Map<AutoDTO>(auto);
         }
 
-        public Auto CreateOne(CreateAutoDTO createAutoDto)
+        public async Task<Auto> CreateOne(CreateAutoDTO createAutoDto)
         {
             Auto auto = _mapper.Map<Auto>(createAutoDto);
 
             // Es importante llamar a este método para que verifique que existe el combustible
-            _combustibleServices.GetOneById(auto.CombustibleId);
+            await _combustibleServices.GetOneById(auto.CombustibleId);
        
-            _db.Autos.Add(auto);
-            _db.SaveChanges();
+            await _autoRepo.Add(auto);
             return auto;
         }
 
-        public Auto UpdateOneById(int id, UpdateAutoDTO updateAutoDto)
+        public async Task<Auto> UpdateOneById(int id, UpdateAutoDTO updateAutoDto)
         {
-            Auto auto = GetOneByIdOrException(id);
+            Auto auto = await GetOneByIdOrException(id);
 
             var autoMapped = _mapper.Map(updateAutoDto, auto);
 
-            _combustibleServices.GetOneById(autoMapped.CombustibleId);
+            await _combustibleServices.GetOneById(autoMapped.CombustibleId);
 
-            _db.Autos.Update(autoMapped);
-            _db.SaveChanges();
+            await _autoRepo.Update(autoMapped);
 
             return autoMapped;
         }
 
-        public void DeleteOneById(int id)
+        public async Task DeleteOneById(int id)
         {
-            var auto = GetOneByIdOrException(id);
+            var auto = await GetOneByIdOrException(id);
 
-            _db.Autos.Remove(auto);
-            _db.SaveChanges();
+            await _autoRepo.Delete(auto);
         }
-
     }
 }

@@ -2,6 +2,7 @@
 using concesionarioAPI.Config;
 using concesionarioAPI.Models.Combustible;
 using concesionarioAPI.Models.Combustible.Dto;
+using concesionarioAPI.Repositories;
 using concesionarioAPI.Utils.Exceptions;
 using System.Net;
 
@@ -10,22 +11,23 @@ namespace concesionarioAPI.Services
     public class CombustibleServices
     {
         private readonly IMapper _mapper;
-        private readonly ApplicationDbContext _db;
+        private readonly ICombustibleRepository _combustibleRepo;
 
-        public CombustibleServices(IMapper mapper, ApplicationDbContext db)
+        public CombustibleServices(IMapper mapper, ICombustibleRepository combustibleRepo)
         {
             _mapper = mapper;
-            _db = db;
+            _combustibleRepo = combustibleRepo;
         }
 
-        public List<Combustible> GetAll()
+        public async Task<List<Combustible>> GetAll()
         {
-            return _db.Combustibles.Select(c => c).ToList();
+            var combustibles = await _combustibleRepo.GetAll();
+            return combustibles.ToList();
         }
 
-        public Combustible GetOneById(int id)
+        public async Task<Combustible> GetOneById(int id)
         {
-            var combustible = GetAll().FirstOrDefault(c => c.Id == id);
+            var combustible = await _combustibleRepo.GetOne(c => c.Id == id);
             if (combustible == null)
             { 
                 throw new CustomHttpException($"No se encontro el Combustible con Id = {id}", HttpStatusCode.NotFound);
@@ -33,33 +35,30 @@ namespace concesionarioAPI.Services
             return combustible;
         }
 
-        public Combustible CreateOne(CreateCombustibleDTO createCombustibleDto)
+        public async Task<Combustible> CreateOne(CreateCombustibleDTO createCombustibleDto)
         {
             Combustible combustible = _mapper.Map<Combustible>(createCombustibleDto);
 
-            _db.Combustibles.Add(combustible);
-            _db.SaveChanges();
+            await _combustibleRepo.Add(combustible);
             return combustible;
         }
 
-        public Combustible UpdateOneById(int id, UpdateCombustibleDTO updateAutoDto)
+        public async Task<Combustible> UpdateOneById(int id, UpdateCombustibleDTO updateAutoDto)
         {
-            Combustible combustible = GetOneById(id);
+            Combustible combustible = await GetOneById(id);
 
             var combustibleMapped = _mapper.Map(updateAutoDto, combustible);
 
-            _db.Combustibles.Update(combustibleMapped);
-            _db.SaveChanges();
+            await _combustibleRepo.Update(combustibleMapped);
 
             return combustibleMapped;
         }
 
-        public void DeleteOneById(int id)
+        public async Task DeleteOneById(int id)
         {
-            var combustible = GetOneById(id);
+            var combustible = await GetOneById(id);
 
-            _db.Combustibles.Remove(combustible);
-            _db.SaveChanges();
+            await _combustibleRepo.Delete(combustible);
         }
     }
 }

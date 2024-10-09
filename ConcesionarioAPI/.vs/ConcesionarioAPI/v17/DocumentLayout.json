@@ -1,12 +1,121 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\concesionarioAPI\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|c:\\users\\icordero.frsn\\desktop\\concesionarioapi\\concesionarioapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|solutionrelative:concesionarioapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|c:\\users\\icordero.frsn\\desktop\\concesionarioapi\\concesionarioapi\\utils\\filters\\authoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|solutionrelative:concesionarioapi\\utils\\filters\\authoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|c:\\users\\icordero.frsn\\desktop\\concesionarioapi\\concesionarioapi\\controllers\\autoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|solutionrelative:concesionarioapi\\controllers\\autoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|c:\\users\\icordero.frsn\\desktop\\concesionarioapi\\concesionarioapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|solutionrelative:concesionarioapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|c:\\users\\icordero.frsn\\desktop\\concesionarioapi\\concesionarioapi\\repositories\\autorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|solutionrelative:concesionarioapi\\repositories\\autorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|c:\\users\\icordero.frsn\\desktop\\concesionarioapi\\concesionarioapi\\concesionarioapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1BCC8932-AA72-4676-822F-5939868ADAC8}|concesionarioAPI\\concesionarioAPI.csproj|solutionrelative:concesionarioapi\\concesionarioapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "concesionarioAPI\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "concesionarioAPI\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T18:12:51.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthOperationFilter.cs",
+              "DocumentMoniker": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Utils\\Filters\\AuthOperationFilter.cs",
+              "RelativeDocumentMoniker": "concesionarioAPI\\Utils\\Filters\\AuthOperationFilter.cs",
+              "ToolTip": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Utils\\Filters\\AuthOperationFilter.cs",
+              "RelativeToolTip": "concesionarioAPI\\Utils\\Filters\\AuthOperationFilter.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAB4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T18:10:09.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutosController.cs",
+              "DocumentMoniker": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Controllers\\AutosController.cs",
+              "RelativeDocumentMoniker": "concesionarioAPI\\Controllers\\AutosController.cs",
+              "ToolTip": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Controllers\\AutosController.cs",
+              "RelativeToolTip": "concesionarioAPI\\Controllers\\AutosController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAA9wCMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T17:43:37.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Repositories\\AutoRepository.cs",
+              "RelativeDocumentMoniker": "concesionarioAPI\\Repositories\\AutoRepository.cs",
+              "ToolTip": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Repositories\\AutoRepository.cs",
+              "RelativeToolTip": "concesionarioAPI\\Repositories\\AutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T17:32:41.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Program.cs",
+              "RelativeDocumentMoniker": "concesionarioAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\Program.cs",
+              "RelativeToolTip": "concesionarioAPI\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAACQAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T17:28:51.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "concesionarioAPI",
+              "DocumentMoniker": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+              "RelativeDocumentMoniker": "concesionarioAPI\\concesionarioAPI.csproj",
+              "ToolTip": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+              "RelativeToolTip": "concesionarioAPI\\concesionarioAPI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-09T17:27:29.001Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

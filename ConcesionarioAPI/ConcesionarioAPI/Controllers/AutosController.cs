@@ -2,6 +2,7 @@
 using concesionarioAPI.Models.Auto.Dto;
 using concesionarioAPI.Services;
 using concesionarioAPI.Utils.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace concesionarioAPI.Controllers
@@ -18,11 +19,11 @@ namespace concesionarioAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<List<AutosDTO>> Get()
+        public async Task<ActionResult<List<AutosDTO>>> Get()
         {
             try
             {
-                var autos = _autoServices.GetAll();
+                var autos = await _autoServices.GetAll();
                 return Ok(autos);
             }
             catch (Exception ex)
@@ -35,11 +36,11 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage),StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CustomMessage),StatusCodes.Status500InternalServerError)]
-        public ActionResult<AutoDTO> Get(int id)
+        public async Task<ActionResult<AutoDTO>> Get(int id)
         {
             try
             {
-                var auto = _autoServices.GetOneById(id);
+                var auto = await _autoServices.GetOneById(id);
                 return Ok(auto);
             }
             catch (CustomHttpException ex)
@@ -56,14 +57,14 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<Auto> Post([FromBody] CreateAutoDTO createAutoDto)
+        public async Task<ActionResult<Auto>> Post([FromBody] CreateAutoDTO createAutoDto)
         {
             try
             {
                 if (!ModelState.IsValid) {
                     return BadRequest(ModelState);
                 }
-                var auto = _autoServices.CreateOne(createAutoDto);
+                var auto = await _autoServices.CreateOne(createAutoDto);
                 // El primer parametro del 'Created' es para decirce donde se creo el recurso.
                 // La función nameof() obtiene el punto de entrada de lo que pasemos y devuelve una cadena de texto.
                 // Tranquilamente le podemos pasar un texto: Created("Auto created", auto);
@@ -85,7 +86,7 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
-        public ActionResult<Auto> Put(int id, [FromBody] UpdateAutoDTO updateAutoDto)
+        public async Task<ActionResult<Auto>> Put(int id, [FromBody] UpdateAutoDTO updateAutoDto)
         {
             try
             {
@@ -93,7 +94,7 @@ namespace concesionarioAPI.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-                var auto = _autoServices.UpdateOneById(id, updateAutoDto);
+                var auto = await _autoServices.UpdateOneById(id, updateAutoDto);
                 return Ok(auto);
 
             }
@@ -112,11 +113,11 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             try
             {
-                _autoServices.DeleteOneById(id);
+                await _autoServices.DeleteOneById(id);
                 return Ok(new CustomMessage($"El Auto con el Id = {id} fue eliminado!"));
                 // tambien se puede devolver un 'no content 204'
                 // return NoContent();

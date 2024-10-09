@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
         "packagesPath": "C:\\Users\\icordero.FRSN\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
+=======
+    "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+        "projectName": "concesionarioAPI",
+        "projectPath": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+        "packagesPath": "C:\\Users\\jgaeto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\icordero.FRSN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\jgaeto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +81,11 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[6.0.35, )"
+=======
+              "version": "[6.0.33, )"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -81,7 +103,11 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[8.1.2, )"
+=======
+              "version": "[8.1.0, )"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             }
           },
           "imports": [

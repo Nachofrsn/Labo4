@@ -20,11 +20,19 @@ namespace concesionarioAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
+<<<<<<< HEAD
         public async Task<ActionResult<List<Combustible>>> Get()
         {
             try
             {
                 var combustibles = await _combustibleServices.GetAll();
+=======
+        public ActionResult<List<Combustible>> Get()
+        {
+            try
+            {
+                var combustibles = _combustibleServices.GetAll();
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
                 return Ok(combustibles);
             }
             catch (Exception ex)
@@ -37,11 +45,19 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
+<<<<<<< HEAD
         public async Task<ActionResult<Combustible>> Get(int id)
         {
             try
             {
                 var combustible = await _combustibleServices.GetOneById(id);
+=======
+        public ActionResult<Combustible> Get(int id)
+        {
+            try
+            {
+                var combustible = _combustibleServices.GetOneById(id);
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
                 return Ok(combustible);
             }
             catch (CustomHttpException ex)
@@ -59,7 +75,11 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
+<<<<<<< HEAD
         public async Task<ActionResult<Combustible>> Post([FromBody] CreateCombustibleDTO createCombustibleDto)
+=======
+        public ActionResult<Combustible> Post([FromBody] CreateCombustibleDTO createCombustibleDto)
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         {
             try
             {
@@ -67,7 +87,11 @@ namespace concesionarioAPI.Controllers
                 {
                     return BadRequest(ModelState);
                 }
+<<<<<<< HEAD
                 var combustible = await _combustibleServices.CreateOne(createCombustibleDto);
+=======
+                var combustible = _combustibleServices.CreateOne(createCombustibleDto);
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
                 return Created(nameof(Post), combustible);
 
             }
@@ -86,7 +110,11 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
+<<<<<<< HEAD
         public async Task<ActionResult<Combustible>> Put(int id, [FromBody] UpdateCombustibleDTO updateCombustibleDTO)
+=======
+        public ActionResult<Combustible> Put(int id, [FromBody] UpdateCombustibleDTO updateCombustibleDTO)
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         {
             try
             {
@@ -94,7 +122,11 @@ namespace concesionarioAPI.Controllers
                 {
                     return BadRequest(ModelState);
                 }
+<<<<<<< HEAD
                 var combustible = await _combustibleServices.UpdateOneById(id, updateCombustibleDTO);
+=======
+                var combustible = _combustibleServices.UpdateOneById(id, updateCombustibleDTO);
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
                 return Ok(combustible);
             }
             catch (CustomHttpException ex)
@@ -111,11 +143,19 @@ namespace concesionarioAPI.Controllers
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CustomMessage), StatusCodes.Status500InternalServerError)]
+<<<<<<< HEAD
         public async Task<ActionResult> Delete(int id)
         {
             try
             {
                 await _combustibleServices.DeleteOneById(id);
+=======
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                _combustibleServices.DeleteOneById(id);
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
                 return Ok(new CustomMessage($"El Combustible con el Id = {id} fue eliminado!"));
 
             }

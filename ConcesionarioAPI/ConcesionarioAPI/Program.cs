@@ -1,12 +1,18 @@
 using concesionarioAPI.Config;
 using concesionarioAPI.Repositories;
 using concesionarioAPI.Services;
+<<<<<<< HEAD
 using concesionarioAPI.Utils.Filters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+=======
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,6 +55,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAutoRepository, AutoRepository>();
 builder.Services.AddScoped<ICombustibleRepository, CombustibleRespository>();
 
+// Repositorios
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(Mapping));
 
@@ -58,6 +67,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
 });
 
+<<<<<<< HEAD
 // secret key
 var secretKey = builder.Configuration.GetSection("jwtSettings").GetSection("secretKey").ToString();
 
@@ -75,6 +85,24 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateLifetime = true
         };
     });
+=======
+//secret key
+string secretKey = builder.Configuration.GetSection("jwtSettings").GetSection("secretKey").ToString();
+
+// jwt
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+    };
+});
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
 
 var app = builder.Build();
 

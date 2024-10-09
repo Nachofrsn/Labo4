@@ -123,11 +123,35 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.35": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0"
         },
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.33": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
+        "type": "package",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
             "related": ".xml"
@@ -155,13 +179,25 @@
       },
       "Microsoft.Bcl.TimeProvider/8.0.1": {
         "type": "package",
+<<<<<<< HEAD
         "compile": {
           "lib/net8.0/Microsoft.Bcl.TimeProvider.dll": {
+=======
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "8.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Bcl.TimeProvider.dll": {
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
           "lib/net8.0/Microsoft.Bcl.TimeProvider.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Bcl.TimeProvider.dll": {
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             "related": ".xml"
           }
         },
@@ -455,7 +491,11 @@
           "System.Text.Json": "7.0.0"
         },
         "compile": {
+<<<<<<< HEAD
           "lib/net7.0/_._": {
+=======
+          "lib/net6.0/_._": {
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             "related": ".xml"
           }
         },
@@ -576,7 +616,11 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.Abstractions/8.1.2": {
+=======
+      "Microsoft.IdentityModel.Abstractions/8.1.0": {
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.Abstractions.dll": {
@@ -589,11 +633,19 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.JsonWebTokens/8.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.TimeProvider": "8.0.1",
           "Microsoft.IdentityModel.Tokens": "8.1.2"
+=======
+      "Microsoft.IdentityModel.JsonWebTokens/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.TimeProvider": "8.0.1",
+          "Microsoft.IdentityModel.Tokens": "8.1.0"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         },
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
@@ -606,10 +658,17 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.Logging/8.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Abstractions": "8.1.2"
+=======
+      "Microsoft.IdentityModel.Logging/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "8.1.0"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         },
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.Logging.dll": {
@@ -656,11 +715,19 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.Tokens/8.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.TimeProvider": "8.0.1",
           "Microsoft.IdentityModel.Logging": "8.1.2"
+=======
+      "Microsoft.IdentityModel.Tokens/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.TimeProvider": "8.0.1",
+          "Microsoft.IdentityModel.Logging": "8.1.0"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         },
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.Tokens.dll": {
@@ -917,6 +984,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "System.IdentityModel.Tokens.Jwt/8.1.2": {
         "type": "package",
         "dependencies": {
@@ -925,11 +993,25 @@
         },
         "compile": {
           "lib/net8.0/System.IdentityModel.Tokens.Jwt.dll": {
+=======
+      "System.IdentityModel.Tokens.Jwt/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "8.1.0",
+          "Microsoft.IdentityModel.Tokens": "8.1.0"
+        },
+        "compile": {
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
           "lib/net8.0/System.IdentityModel.Tokens.Jwt.dll": {
+=======
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             "related": ".xml"
           }
         }
@@ -1383,10 +1465,17 @@
         "microsoft.aspnet.webapi.core.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.35": {
       "sha512": "e/U+dWKWat9hDuClvjUlJm1vtKen0NHMJxX6bcXVfS9MUvdVDAbUzRnw0w0VlH4tKsFE70aLINjNtlYIqUkuBA==",
       "type": "package",
       "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.35",
+=======
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.33": {
+      "sha512": "eGWABTtGDLVDlEOuvh6SU3LHV0a2nZCkrYOy41OHFkF3mnLyH6NTL7/DDrrF0sbB7gSGDhoZJ0PasIc14rVSAA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.33",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1394,6 +1483,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+<<<<<<< HEAD
         "microsoft.aspnetcore.authentication.jwtbearer.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
@@ -1402,18 +1492,32 @@
       "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
       "path": "microsoft.bcl.asyncinterfaces/1.1.1",
+=======
+        "microsoft.aspnetcore.authentication.jwtbearer.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
+      "sha512": "3WA9q9yVqJp222P3x1wYIGDAkpjAku0TMUaaQV22g6L67AI0LdOIrVS7Ht2vJfLHGSPVuqN94vIr15qn+HEkHw==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/8.0.0",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
-        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "buildTransitive/net461/Microsoft.Bcl.AsyncInterfaces.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net462/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+<<<<<<< HEAD
         "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
         "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -1421,6 +1525,11 @@
         "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+=======
+        "microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       ]
     },
     "Microsoft.Bcl.TimeProvider/8.0.1": {
@@ -2239,10 +2348,17 @@
         "microsoft.identity.client.extensions.msal.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.IdentityModel.Abstractions/8.1.2": {
       "sha512": "QSSDer3kvyTdNq6BefgX4EYi1lsia2zJUh5CfIMZFQUh6BhrXK1WE4i2C9ltUmmuUjoeVVX6AaSo9NZfpTGNdw==",
       "type": "package",
       "path": "microsoft.identitymodel.abstractions/8.1.2",
+=======
+    "Microsoft.IdentityModel.Abstractions/8.1.0": {
+      "sha512": "jZ7UKZNu2tDS2Ft9PxxOdJYUWo6nBEQnv+yz69GpCr4Fs677aq/LP82gp/NOgI5hPIlxIYP1ynLCH1ruGfw2rw==",
+      "type": "package",
+      "path": "microsoft.identitymodel.abstractions/8.1.0",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2259,6 +2375,7 @@
         "lib/net9.0/Microsoft.IdentityModel.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Abstractions.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.abstractions.8.1.2.nupkg.sha512",
         "microsoft.identitymodel.abstractions.nuspec"
       ]
@@ -2267,6 +2384,16 @@
       "sha512": "AWQINMvtamdYBqtG8q8muyYTfA9i5xRBEsMKQdzOn5xRzhVVDSzsNGYof1docfF3pX4hNRUpHlzs61RP0reZMw==",
       "type": "package",
       "path": "microsoft.identitymodel.jsonwebtokens/8.1.2",
+=======
+        "microsoft.identitymodel.abstractions.8.1.0.nupkg.sha512",
+        "microsoft.identitymodel.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/8.1.0": {
+      "sha512": "p77XmuOb6Vt9Zi0jowBK5zk8YoIQs8kK2CSKaV0ofkNLKSraKXlndJ9gBT0ojP7BOQP7vAWTgVVgB8Kg5pmXpg==",
+      "type": "package",
+      "path": "microsoft.identitymodel.jsonwebtokens/8.1.0",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2283,6 +2410,7 @@
         "lib/net9.0/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.jsonwebtokens.8.1.2.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
@@ -2291,6 +2419,16 @@
       "sha512": "pEn//qKJcEXDsLHLzACFrT3a2kkpIGOXLEYkcuxjqWoeDnbeotu0LY9fF8+Ds9WWpVE9ZGlxXamT0VR8rxaQeA==",
       "type": "package",
       "path": "microsoft.identitymodel.logging/8.1.2",
+=======
+        "microsoft.identitymodel.jsonwebtokens.8.1.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.nuspec"
+      ]
+    },
+    "Microsoft.IdentityModel.Logging/8.1.0": {
+      "sha512": "Qrm6jLmzeNnWwKc+KoJT8DQgnVXsNR3LBSU2LXnA9RDs8eflBNrQOifxJn9r4k5+rdRq3mUu3GJNGKlWIQzguA==",
+      "type": "package",
+      "path": "microsoft.identitymodel.logging/8.1.0",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2307,7 +2445,11 @@
         "lib/net9.0/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.logging.8.1.2.nupkg.sha512",
+=======
+        "microsoft.identitymodel.logging.8.1.0.nupkg.sha512",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
@@ -2357,10 +2499,17 @@
         "microsoft.identitymodel.protocols.openidconnect.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.IdentityModel.Tokens/8.1.2": {
       "sha512": "ZSzGsAA3BY20XHnsp8OjrHFtpd+pQtiu4UJDjPtXwCtEzcE5CjWP/8iZEJXy5AxVEFB0z6EwLSN+T1Fsdpjifw==",
       "type": "package",
       "path": "microsoft.identitymodel.tokens/8.1.2",
+=======
+    "Microsoft.IdentityModel.Tokens/8.1.0": {
+      "sha512": "tQ21tUUKjG5Hzv/Rxmgg4f2LZo+nas1OJJdhHmLaU9c7l72lgQgP7luXlBnJOS2Lotd4DIj3ZE+lFVaVmkniag==",
+      "type": "package",
+      "path": "microsoft.identitymodel.tokens/8.1.0",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2377,7 +2526,11 @@
         "lib/net9.0/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.tokens.8.1.2.nupkg.sha512",
+=======
+        "microsoft.identitymodel.tokens.8.1.0.nupkg.sha512",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
@@ -2736,10 +2889,17 @@
         "version.txt"
       ]
     },
+<<<<<<< HEAD
     "System.IdentityModel.Tokens.Jwt/8.1.2": {
       "sha512": "UoidlNYjML1ZbV5s8bLP84VpxDzv8uhHzyt5YkZwqLmFTmtOQheNuTKpR/5UWmO5Ka4JT3kVmhUNq5Li733wTg==",
       "type": "package",
       "path": "system.identitymodel.tokens.jwt/8.1.2",
+=======
+    "System.IdentityModel.Tokens.Jwt/8.1.0": {
+      "sha512": "2Na5IOk7Tr7gmBDyPOSpFPi8DXVHfJofbmp6A0L3NSuJz6n3n5kx3CgBD1WRvSaSLu0QHjvrzv6rpghiqmFgSg==",
+      "type": "package",
+      "path": "system.identitymodel.tokens.jwt/8.1.0",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2756,7 +2916,11 @@
         "lib/net9.0/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
+<<<<<<< HEAD
         "system.identitymodel.tokens.jwt.8.1.2.nupkg.sha512",
+=======
+        "system.identitymodel.tokens.jwt.8.1.0.nupkg.sha512",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -3390,6 +3554,7 @@
       "AutoMapper >= 13.0.1",
       "BCrypt.Net-Next >= 4.0.3",
       "Microsoft.AspNet.WebApi.Core >= 5.3.0",
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.35",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.20",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.20",
@@ -3400,21 +3565,44 @@
   "packageFolders": {
     "C:\\Users\\icordero.FRSN\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.33",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.20",
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.20",
+      "Swashbuckle.AspNetCore >= 6.7.1",
+      "System.IdentityModel.Tokens.Jwt >= 8.1.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\jgaeto\\.nuget\\packages\\": {}
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
       "projectName": "concesionarioAPI",
       "projectPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
       "packagesPath": "C:\\Users\\icordero.FRSN\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\icordero.FRSN\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+      "projectName": "concesionarioAPI",
+      "projectPath": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\concesionarioAPI.csproj",
+      "packagesPath": "C:\\Users\\jgaeto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jgaeto\\Desktop\\concesionarioAPI\\concesionarioAPI\\obj\\",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\icordero.FRSN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\jgaeto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3460,7 +3648,11 @@
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[6.0.35, )"
+=======
+            "version": "[6.0.33, )"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -3478,7 +3670,11 @@
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[8.1.2, )"
+=======
+            "version": "[8.1.0, )"
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
           }
         },
         "imports": [

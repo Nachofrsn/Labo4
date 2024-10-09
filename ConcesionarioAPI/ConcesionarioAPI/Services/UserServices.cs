@@ -1,5 +1,11 @@
 ﻿using AutoMapper;
+<<<<<<< HEAD
 using concesionarioAPI.Models.User.Dto;
+=======
+using concesionarioAPI.Config;
+using concesionarioAPI.Models.User.Dto;
+using concesionarioAPI.Models.User;
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
 using concesionarioAPI.Utils.Exceptions;
 using System.Net;
 using concesionarioAPI.Models.Usuario;
@@ -75,6 +81,7 @@ namespace concesionarioAPI.Services
         {
             User user;
 
+<<<<<<< HEAD
             if (email == null && username == null)
             {
                 throw new CustomHttpException("Invalid Credentials", HttpStatusCode.BadRequest);
@@ -92,6 +99,26 @@ namespace concesionarioAPI.Services
             {
                 throw new CustomHttpException("Invalid Credentials", HttpStatusCode.BadRequest);
             }
+=======
+            if (string.IsNullOrEmpty(username) && string.IsNullOrEmpty(email)) {
+                throw new CustomHttpException($"Credenciales incorrectas", HttpStatusCode.BadRequest);
+            }
+
+            if (!string.IsNullOrEmpty(email))
+            {
+                user = await _userRepo.GetOne(u => u.Email == email);
+            }
+            else
+            {
+                user = await _userRepo.GetOne(u => u.UserName == username);
+            }
+
+            if (user == null)
+            {
+                throw new CustomHttpException($"Credenciales incorrectas", HttpStatusCode.BadRequest);
+            }
+
+>>>>>>> 030e5a364a6670effa8e7a2f8c43c7491087b1d9
             return user;
         }
     }
